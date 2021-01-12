@@ -6,7 +6,7 @@ function ordr_pz($pizzatype, $fw) {
 $type = $pizzatype;
 echo 'Creating new order... <br>';
 $toPrint = 'A ';
- $toPrint .= $pizzatype;
+$toPrint .= $pizzatype;
 $p = calc_cts($type);
 
     $address = 'unknown';
