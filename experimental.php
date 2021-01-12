@@ -1,37 +1,30 @@
 <?php
 
-<<<<<<< HEAD
-// fw = for who
-function ordr_pz($pizzatype, $fw) {
+function order_pizza($pizzaType, $for_who){
+    $pizzaType ;
+    $price = calculate_costs($pizzaType);
+    $address = ''; //remove unknown to empty string
 
-$type = $pizzatype;
-echo 'Creating new order... <br>';
-$toPrint = 'A ';
-$toPrint .= $pizzatype;
-$p = calc_cts($type);
+    
 
-=======
-function order_pizza($pizzatype, $for_who){
-    $type = $pizzatype;
-    $toPrint = 'A ';
-    $toPrint .= $pizzatype;
-    $price = calculate_costs($type);
->>>>>>> 22fdaca8070b43fea9c0dee5fff9f27220012aa1
-    $address = 'unknown';
+   // change if condition to switch
 
-    if ($for_who == 'koen') {
-        $address = 'a yacht in Antwerp';
-    } else if ($for_who == 'manuele') {
-        $address = 'somewhere in Belgium';
-    } else if ($for_who == 'students') {
-        $address = 'BeCode office';
+    switch ($for_who){
+        case  'Koen':
+            $address = 'a yacht in Antwerp';
+            break;
+        case 'Manuele':
+            $address = 'somewhere in Belgium';
+            break;
+        case 'students':
+            $address = 'BeCode office';
+            break;
+ 
     }
-
     echo 'Creating new order... <br>';
-    $toPrint .= ' pizza should be sent to ' . $for_who . '. <br>The address: {$address}.';
-    echo $toPrint;
+    echo 'A ' .$pizzaType.' pizza should be sent to ' .$for_who . '.' .'<br>The address: ' .$address .'.';
     echo '<br>';
-    echo 'The bill is €' . $price . '.<br>';
+    echo 'The bill is €' .$price .'.<br>';
     echo 'Order finished.<br><br>';
 }
 
@@ -39,44 +32,49 @@ function total_price($price){
     return $price;
 }
 
-function test($pizza_type){
-    echo 'Test: type is {$pizza_type}. <br>';
-}
 
-function calculate_costs($pizza_type){
-    $cost = 'unknown';
+// useless function 
+// function test($pizza_type){
+//     echo 'Test: type is'. $pizza_type. '<br>';
+// }
 
-    if ($pizza_type == 'marguerita') {
-        $cost = 5;
-    } else {
-        if ($pizza_type == 'golden') {
+function calculate_costs($pizzaType){
+    $cost = '';
+
+    // change if condition to switch, in the previous if condition no need for nesting!
+
+    switch($pizzaType){
+        case 'marguerita':
+            $cost = 5;
+            break;
+        case 'golden':
             $cost = 100;
-        }
-
-        if ($pizza_type == 'calzone') {
+            break;
+        case 'calzone':
             $cost = 10;
-        }
-
-        if ($pizza_type == 'hawai') {
+            break;
+        case 'hawai':
             throw new Exception('Computer says no');
-        }
+            break;
     }
     return $cost;
 }
 
 function order_pizza_all(){
-    $test = 0;
-    order_pizza('calzone', 'koen');
-    order_pizza('marguerita', 'manuele');
+    // $test = 0; //no need this variable
+    order_pizza('calzone', 'Koen');
+    order_pizza('marguerita', 'Manuele');
     order_pizza('golden', 'students');
 }
 
-function make_Allhappy($do_it){
-    if ($do_it) {
-        order_pizza_all();
-    } else {
-        // Should not do anything when false
-    }
-}
+order_pizza_all(); // call this function to execute it outside make_Allhappy function
 
-make_Allhappy(true);
+// this function below is not needed 
+
+// function make_Allhappy($orderPlaced){
+//     if ($orderPlaced) {
+//         order_pizza_all();
+//     }
+// }
+
+// make_Allhappy(true);

@@ -18,6 +18,13 @@ It can be personal to give some spaces after functions however in most cases the
 * For later use and also for better understanding in group projects, it is essential to name variables and functions logically.
 * Shortages for functions & variable names should also be meaninful and not too short! 
 * Rewrite the names that are very short which doesn't make any sense to anyone.It is to avoid struggling to explain variables and funtions in later stage what they actually do.
+* Change if condition to switch to make readibilty better.
+* Remove unnecessary functions and variables.
+
+
+
+3- Unified code
+* Changed double quote notations to single quote to give a unified code.
 
 
 
