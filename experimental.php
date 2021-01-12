@@ -1,6 +1,6 @@
 <?php
 
-function orderPizza($pizzaType, $for_who){
+function orderPizza($pizzaType, $customer){
     $pizzaType ;
     $price = calculateCosts($pizzaType);
     $address = ''; //remove unknown to empty string
@@ -8,7 +8,7 @@ function orderPizza($pizzaType, $for_who){
 
    // change if condition to switch
 
-    switch ($for_who){
+    switch ($customer){
         case  'Koen':
             $address = 'a yacht in Antwerp';
             break;
