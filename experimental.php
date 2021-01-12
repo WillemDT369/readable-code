@@ -3,12 +3,11 @@
 // fw = for who
 function ordr_pz($pizzatype, $fw){
     $type = $pizzatype;
-    echo 'Creating new order... <br>';
     $toPrint = 'A ';
     $toPrint .= $pizzatype;
     $p = calc_cts($type);
-
     $address = 'unknown';
+
     if ($fw == 'koen') {
         $address = 'a yacht in Antwerp';
     } elseif ($fw == 'manuele') {
@@ -17,6 +16,7 @@ function ordr_pz($pizzatype, $fw){
         $address = 'BeCode office';
     }
 
+    echo 'Creating new order... <br>';
     $toPrint .=   ' pizza should be sent to ' . $fw . ". <br>The address: {$address}.";
     echo $toPrint;
     echo '<br>';
