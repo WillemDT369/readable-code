@@ -1,11 +1,10 @@
 <?php
 
-function order_pizza($pizzaType, $for_who){
+function orderPizza($pizzaType, $for_who){
     $pizzaType ;
-    $price = calculate_costs($pizzaType);
+    $price = calculateCosts($pizzaType);
     $address = ''; //remove unknown to empty string
 
-    
 
    // change if condition to switch
 
@@ -28,17 +27,12 @@ function order_pizza($pizzaType, $for_who){
     echo 'Order finished.<br><br>';
 }
 
-function total_price($price){
+function totalPrice($price){
     return $price;
 }
 
 
-// useless function 
-// function test($pizza_type){
-//     echo 'Test: type is'. $pizza_type. '<br>';
-// }
-
-function calculate_costs($pizzaType){
+function calculateCosts($pizzaType){
     $cost = '';
 
     // change if condition to switch, in the previous if condition no need for nesting!
@@ -60,21 +54,13 @@ function calculate_costs($pizzaType){
     return $cost;
 }
 
-function order_pizza_all(){
+function orderPizzaAll(){
     // $test = 0; //no need this variable
     order_pizza('calzone', 'Koen');
     order_pizza('marguerita', 'Manuele');
     order_pizza('golden', 'students');
 }
 
-order_pizza_all(); // call this function to execute it outside make_Allhappy function
+orderPizzaAll(); // call this function to execute it outside make_Allhappy function
 
-// this function below is not needed 
 
-// function make_Allhappy($orderPlaced){
-//     if ($orderPlaced) {
-//         order_pizza_all();
-//     }
-// }
-
-// make_Allhappy(true);
